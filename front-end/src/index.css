@@ -25,6 +25,106 @@ a {
 }
 
 
+
+h4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+table {
+  width: 50%;
+  margin: auto;
+  text-align: justify;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid grey;
+}
+
+td {
+  text-align: center;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #c5c6d5;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 3rem;
+  background-color: #dfdfdf;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  background-color: #C5C6D0;
+  padding: 1em;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 1em;
+}
+
+.card {
+  background-color: #DFDFDF;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin: 1em;
+  width: 25rem;
+  height: 25rem;
+}
+
+.card > img {
+  width: 150px;
+  height: 150px;
+  margin: 0em 0em 1em 0em;
+}
+
+.green {
+  background-color: green;
+  width: 25px;
+  height: 25px;
+}
+
+
+.red {
+  background-color: red;
+  width: 25px;
+  height: 25px;
+}
+
+.price_stock{
+  display: flex;
+}
+
+.price_stock > h3 {
+  position: relative;
+  left: 20px;
+  bottom: 15px;
+}
+
+.actions {
+  text-align: right;
+}
+
+
+
+
+
+
 footer {
   background: #c5c6d0;
   display: flex;

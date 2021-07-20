@@ -20,21 +20,12 @@ export default function Products() {
     return (
         <div className="Products">
             <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Take me there</th>
-                            <th>See this product</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {products.map((product, index) => {
-                            return <Product key={index} product={product}/>
-                        })}
-                    </tbody>
-                </table>
+                <div className="cardContainer">
+                    {products.map((product, index) => {
+                        return <Product key={index} product={product}/>
+                    })}
+                </div>
+                    
             </section>
         </div>
     )
