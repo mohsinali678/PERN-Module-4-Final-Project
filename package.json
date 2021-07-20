@@ -1,0 +1,24 @@
+{
+  "name": "pern-module-4-final-project",
+  "version": "1.0.0",
+  "description": "E-commerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohsinali678/PERN-Module-4-Final-Project.git"
+  },
+  "keywords": [
+    "Online",
+    "store",
+    "E-commerce"
+  ],
+  "author": "Hafiz Ali, Jammee, Jasleen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohsinali678/PERN-Module-4-Final-Project/issues"
+  },
+  "homepage": "https://github.com/mohsinali678/PERN-Module-4-Final-Project#readme"
+}
