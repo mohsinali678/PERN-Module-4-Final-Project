@@ -15,7 +15,9 @@
   "author": "Hafiz Ali, Jamee Hengari, Jasleen Villamil",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg-promise": "^10.10.2"
   }
 }
