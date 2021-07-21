@@ -4,6 +4,7 @@ export default function Product(props) {
     const { product }  = props;
     let stock = ""
     let in_or_out_stock = ""
+    
     if(product.in_stock){   
         stock = "green"
         in_or_out_stock = "In_Stock"
@@ -11,6 +12,7 @@ export default function Product(props) {
         stock = "red"
         in_or_out_stock = "Out of Stock"
     }
+
     return (
         <Link to={`/products/:id/`}>
             <div className='card'>

@@ -1,4 +1,4 @@
-\c products_dev;
+\c d2r9v82k5agpia;
 
 INSERT INTO products (name, image_url, price, number_of_items, in_stock) VALUES
 ('Rawlings R8U Official League Baseball', 'https://dks.scene7.com/is/image/GolfGalaxy/16RAWUFFCLLGLB3XXBSB?qlt=70&wid=600&fmt=pjpeg', 3.99, 20, true),

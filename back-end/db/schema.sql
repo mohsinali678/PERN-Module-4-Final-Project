@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS products_dev;
-CREATE DATABASE products_dev;
+DROP DATABASE IF EXISTS d2r9v82k5agpia;
+CREATE DATABASE d2r9v82k5agpia;
 
-\c products_dev;
+\c d2r9v82k5agpia;
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,

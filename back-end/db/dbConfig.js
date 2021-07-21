@@ -16,10 +16,6 @@ const {
 //Connection Object
 const cn = DATABASE_URL
   ? {
-    // host: PG_HOST,
-    // port: PG_PORT,
-    // database: PG_DATABASE,
-    // user: PG_USER
       connectionString: DATABASE_URL,
       max: 30,
       ssl: {
