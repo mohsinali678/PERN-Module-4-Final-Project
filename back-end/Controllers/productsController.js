@@ -21,7 +21,7 @@ products.get("/", async (req, res) => {
 });
 
 // Create Route
-products.post("/add", async (req, res) => {
+products.post("/", async (req, res) => {
   try {
     const newProduct = await addProduct(req.body);
     if (newProduct["id"]) {
