@@ -14,14 +14,26 @@ const {
 // Index Route
 products.get("/", async (req, res) => {
   const allProducts = await getAllProducts();
-  res.status(200).json({
-    success: true,
-    payload: allProducts,
-  });
+  try {
+    if (allProducts.code === "ECONNREFUSED") {
+      console.log(`Database ${allProducts}`);
+      throw `Unable to connect to the database`;
+    } else {
+      res.status(200).json({
+        success: true,
+        payload: allProducts,
+      });
+    }
+  } catch (e) {
+    res.status(404).json({
+      error: "Error",
+      message: e,
+    });
+  }
 });
 
 // Create Route
-products.post("/add", async (req, res) => {
+products.post("/", async (req, res) => {
   try {
     const newProduct = await addProduct(req.body);
     if (newProduct["id"]) {
