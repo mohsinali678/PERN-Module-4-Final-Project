@@ -5,6 +5,11 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 //PAGES
 import Home from "./Pages/Home.js"
 import Index from "./Pages/Index.js"
+import New from "./Pages/New.js"
+import Show from "./Pages/Show.js";
+import Edit from "./Pages/Edit.js";
+import FourOFour from "./Pages/FourOFour.js";
+
 
 
 //COMPONENTS
@@ -27,7 +32,21 @@ function App() {
               <Index />
             </Route>
 
+            <Route path="/products/new">
+              <New />
+            </Route>
 
+            <Route exact path="/products/:id">
+              <Show />
+            </Route>
+
+            <Route path="/products/:id/edit">
+              <Edit />
+            </Route>
+
+            <Route path="*">
+              <FourOFour />
+            </Route>
 
           </Switch>
         </main>

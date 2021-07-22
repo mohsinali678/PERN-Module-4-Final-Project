@@ -4,9 +4,11 @@ import apiURL from "../util/apiURL.js"
 import Product from "./Product.js"
 
 export default function Products() {
+    //INITIALIZING VARIABLES
     const API = apiURL();
     const [products, setProducts] = useState([]);
 
+    //SET STATE VARIABLE UPON PAGE LOAD
     useEffect(() => {
         axios.get(`${API}/products`)
         .then(
