@@ -113,6 +113,19 @@ export default function ProductEditForm() {
                 />
                 <br />
 
+
+                <label htmlFor="description_of_item">Description:</label>
+                <textarea
+                    id="description_of_item"
+                    name="description_of_item"
+                    placeholder="Describe the item....."
+                    value={product.description_of_item}
+                    onChange={handleTextChange}
+                    required
+                />
+                <br />
+
+
                 <input type="submit" />
             </form>
 
