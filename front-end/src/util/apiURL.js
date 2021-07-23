@@ -1,7 +1,11 @@
 export default function apiURL() {
-    return (
-        window.location.hostname === "localhost" || "127.0.0.1"
-        ? "http://localhost:3003"
-        : "https://sports-gear-api.herokuapp.com"
-    )
+        const { hostname } = window.location;
+        if(hostname === "localhost"){
+            return  "http://localhost:3003"
+        }else if(hostname === "127.0.0.1"){
+            return  "http://localhost:3003"
+        }else{
+            return "https://sports-gear-api.herokuapp.com"
+        }
+    
 }
