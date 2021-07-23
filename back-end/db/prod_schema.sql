@@ -2,6 +2,12 @@
 \c d2r9v82k5agpia;
 --
 
+
+--Delete tables products if it is already there
+DROP TABLE IF EXISTS products;
+--
+
+
 --Create a table products
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
