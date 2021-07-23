@@ -24,13 +24,13 @@ const addProduct = async (product) => {
       throw "You must specify a name of product";
     }
     const newProduct = await db.one(
-      "INSERT INTO products (name, image_url, price, number_of_items, in_stock) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      "INSERT INTO products (name, image_url, price, number_of_items, description_of_item) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [
         product.name,
         product.image_url,
         product.price,
         product.number_of_items,
-        product.in_stock,
+        product.description_of_item,
       ]
     );
     return newProduct;
@@ -54,13 +54,13 @@ const deleteProduct = async (id) => {
 const updateProduct = async (id, product) => {
   try {
     const updatedProduct = await db.one(
-      "UPDATE products SET name=$1, image_url=$2, price=$3, number_of_items=$4, in_stock=$5 WHERE id=$6 RETURNING *",
+      "UPDATE products SET name=$1, image_url=$2, price=$3, number_of_items=$4, description_of_item=$5 WHERE id=$6 RETURNING *",
       [
         product.name,
         product.image_url,
         product.price,
         product.number_of_items,
-        product.in_stock,
+        product.description_of_item,
         id,
       ]
     );

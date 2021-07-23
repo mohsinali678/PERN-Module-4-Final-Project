@@ -46,16 +46,15 @@ export default withRouter(function ProductDetails() {
      
     return (
         <div className="Show_child">
-            <div className='card'>
+            <div className='card' style={{backgroundColor:"#DFDFDF"}}>
                     <img src={product.image_url} alt={product.name} />
                     <h3>{product.name}</h3>
-                    <p>Description</p>
-                    <h4>Price: ${product.price}</h4>
-                    <h5>Remaining Items:{product.number_of_items}</h5>
-                    <br />
+                    <p style={{textAlign:"justify"}}><strong>Description: </strong>{product.description_of_item}</p>
 
                     <div className="price_stock">
-                        <div className={stock}></div><h3>{in_or_out_stock}</h3>
+                        <h4>Price: ${product.price}</h4>
+                        <div><div className={stock}></div><h3>{in_or_out_stock}</h3></div>
+                        <h5>Remaining Items:{product.number_of_items}</h5>
                     </div>
             </div>
 

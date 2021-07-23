@@ -12,6 +12,7 @@ export default function ProductEditForm() {
         image_url : "",
         price : 0,
         number_of_items: 0,
+        description_of_item:" ",
         in_stock : false
     });
     const history = useHistory();
@@ -21,7 +22,7 @@ export default function ProductEditForm() {
     useEffect(() => {
         axios.get(`${API}/products/${id}`)
         .then(
-            response => setProduct(response.data.payload)
+            response => {setProduct(response.data.payload); console.log(response.data.payload)}
         ,
             (error) => {
             console.error(`Error: ${error}`)
@@ -108,6 +109,17 @@ export default function ProductEditForm() {
                     type="number"
                     placeholder="Total Number of items available for sale"
                     value={product.number_of_items}
+                    onChange={handleTextChange}
+                    required
+                />
+                <br />
+
+                <label htmlFor="description_of_item">Description:</label>
+                <textarea
+                    id="description_of_item"
+                    name="description_of_item"
+                    placeholder="Describe the item....."
+                    value={product.description_of_item}
                     onChange={handleTextChange}
                     required
                 />

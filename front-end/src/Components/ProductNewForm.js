@@ -11,6 +11,7 @@ export default withRouter(function ProductNewForm() {
         image_url : "",
         price : 0,
         number_of_items: 0,
+        description_of_item:"",
         in_stock : false
     });
     const history = useHistory();
@@ -93,7 +94,18 @@ export default withRouter(function ProductNewForm() {
                     onChange={handleTextChange}
                     required
                 />
-                <br />  
+                <br /> 
+
+                <label htmlFor="description_of_item">Description:</label>
+                <textarea
+                    id="description_of_item"
+                    name="description_of_item"
+                    placeholder="Describe the item....."
+                    value={product.description_of_item}
+                    onChange={handleTextChange}
+                    required
+                />
+                <br /> 
 
                 <input type="submit" />
             </form>

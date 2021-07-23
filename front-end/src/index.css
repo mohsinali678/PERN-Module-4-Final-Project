@@ -84,7 +84,7 @@ body {
   padding: 1rem;
   margin: 1em;
   width: 25rem;
-  height: 30rem;
+  height: auto;
 }
 
 .card > img {
@@ -95,19 +95,20 @@ body {
 
 .green {
   background-color: green;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
 }
 
 
 .red {
   background-color: red;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
 }
 
 .price_stock{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .price_stock > h3 {
@@ -153,6 +154,13 @@ input[type="submit"] {
   display:grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
+  background: #c5c6d0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 1em;
 }
 
 
