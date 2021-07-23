@@ -1,12 +1,14 @@
 import ProductDetails from "../Components/ProductDetails";
 
 export default function Show() {
-    return (
-        <div className="Show">
-            <h2>Show</h2>
-            <div>
-                <ProductDetails />
-            </div>
-        </div>
-    )
+  return (
+    <div className="Show">
+      <div className="centered-heading">
+        <h2>Show</h2>
+      </div>
+      <div>
+        <ProductDetails />
+      </div>
+    </div>
+  );
 }
