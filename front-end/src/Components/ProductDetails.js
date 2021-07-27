@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useHistory, withRouter } from "react-router-dom";
 import apiURL from "../util/apiURL";
 
-export default withRouter(function ProductDetails() {
+export default withRouter(function ProductDetails(props) {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
   const history = useHistory();
   const API = apiURL();
+  const { addToCart } = props;
 
   let stock = "";
   let in_or_out_stock = "";
@@ -49,7 +50,7 @@ export default withRouter(function ProductDetails() {
   return (
     <div className="Show_child">
       <div className="card" style={{ backgroundColor: "#DFDFDF" }}>
-        <img src={product.image_url} alt={product.name} />
+        <img id="cardImage" src={product.image_url} alt={product.name} />
         <h3>{product.name}</h3>
         <p style={{ textAlign: "justify" }}>
           <strong>Description: </strong>
@@ -76,12 +77,18 @@ export default withRouter(function ProductDetails() {
         <Link to={`/products/${id}/edit`}>
           <button>Edit</button>
         </Link>
-        <br />
-        <br />
 
+        <br />
+        <br />
         <Link to={`/products`}>
           <button>Go Back</button>
         </Link>
+
+        <br />
+        <br />
+        <div>
+          <button onClick={() => addToCart(product)}>Add To Cart</button>
+        </div>
       </div>
     </div>
   );

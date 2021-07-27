@@ -90,10 +90,14 @@ body {
   height: auto;
 }
 
-.card > img {
+#cardImage {
   width: 150px;
   height: 150px;
   margin: 0em 0em 1em 0em;
+}
+
+#numberInput {
+  width: 50px;
 }
 
 .green {

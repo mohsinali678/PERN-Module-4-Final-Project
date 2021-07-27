@@ -1,22 +1,26 @@
 //DEPENDENCIES
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
 
 //PAGES
-import Home from "./Pages/Home.js"
-import Index from "./Pages/Index.js"
-import New from "./Pages/New.js"
+import Home from "./Pages/Home.js";
+import Index from "./Pages/Index.js";
+import New from "./Pages/New.js";
 import Show from "./Pages/Show.js";
 import Edit from "./Pages/Edit.js";
 import FourOFour from "./Pages/FourOFour.js";
-
-
+import Cart from "./Components/Cart";
 
 //COMPONENTS
-import NavBar from "./Components/NavBar.js"
-import FootBar from "./Components/FootBar.js"
+import NavBar from "./Components/NavBar.js";
+import FootBar from "./Components/FootBar.js";
 
 function App() {
+  const [cartContent, setCartContent] = useState([]);
+
+  const addToCart = (product) => {
+    setCartContent([...cartContent, product]);
+  };
 
   return (
     <div className="App">
@@ -27,9 +31,13 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            
+
             <Route exact path="/products">
-              <Index />
+              <Index addToCart={addToCart} />
+            </Route>
+
+            <Route path="/cart">
+              <Cart cartContent={cartContent} />
             </Route>
 
             <Route path="/products/new">
@@ -37,7 +45,7 @@ function App() {
             </Route>
 
             <Route exact path="/products/:id">
-              <Show />
+              <Show addToCart={addToCart} />
             </Route>
 
             <Route path="/products/:id/edit">
@@ -47,10 +55,9 @@ function App() {
             <Route path="*">
               <FourOFour />
             </Route>
-
           </Switch>
         </main>
-      <FootBar />
+        <FootBar />
       </Router>
     </div>
   );
