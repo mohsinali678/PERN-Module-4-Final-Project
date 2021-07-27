@@ -24,11 +24,10 @@ const addProduct = async (product) => {
       throw "You must specify a name of product";
     }
     const newProduct = await db.one(
-      "INSERT INTO products (name, image_url, file, price, number_of_items, description_of_item) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      "INSERT INTO products (name, image_url, price, number_of_items, description_of_item) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [
         product.name,
         product.image_url,
-        product.file,
         product.price,
         product.number_of_items,
         product.description_of_item,

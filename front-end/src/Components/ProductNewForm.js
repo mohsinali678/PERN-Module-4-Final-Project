@@ -9,13 +9,11 @@ export default withRouter(function ProductNewForm() {
     const [product, setProduct] = useState({
         name : "",
         image_url : "",
-        file : null,
         price : 0,
         number_of_items: 0,
         description_of_item:"",
         in_stock : false
     });
-    // const [file, setFile] = useState(null);
     const history = useHistory();
 
 
@@ -23,7 +21,7 @@ export default withRouter(function ProductNewForm() {
     const addProduct = (newProduct) => {
         axios.post(`${API}/products`, newProduct)
             .then(
-                (response) => {
+                () => {
                     history.push("/products");
                 }
                 ,
@@ -32,9 +30,6 @@ export default withRouter(function ProductNewForm() {
                 }
             )
             .catch(c => console.warn(`Warning: ${c}`));
-        
-        
-            
     }
 
 
@@ -43,12 +38,6 @@ export default withRouter(function ProductNewForm() {
         setProduct({...product, [event.target.id] : event.target.value});
     }
 
-
-    //File Select Handler
-    const fileSelectHandler = (event) => {
-        product[event.target.id] = event.target.files[0]; 
-        product['image_url'] = URL.createObjectURL(product[event.target.id])
-    }
 
 
     //Handle Submit
@@ -72,17 +61,18 @@ export default withRouter(function ProductNewForm() {
                     required
                 />
                 <br />
-
-                <label htmlFor="file">Image URL:</label>
+                <label htmlFor="image_url">Image URL:</label>
                 <input
-                    id="file"
-                    name="file"
-                    type="file"
-                    onChange={fileSelectHandler}
+                    id="image_url"
+                    name="image_url"
+                    type="text"
+                    placeholder="http[s]://"
+                    value={product.image_url}
+                    onChange={handleTextChange}
+                    pattern="http[s]*://.+"
                     required
                 />
                 <br />
-                
                 <label htmlFor="price">Price:</label>
                 <input
                     id="price"
@@ -94,7 +84,6 @@ export default withRouter(function ProductNewForm() {
                     required
                 />
                 <br />
-
                 <label htmlFor="number_of_items">Total Number of Items:</label>
                 <input
                     id="number_of_items"

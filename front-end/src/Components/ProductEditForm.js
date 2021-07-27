@@ -10,7 +10,6 @@ export default function ProductEditForm() {
     const [product, setProduct] = useState({
         name : "",
         image_url : "",
-        file : null,
         price : 0,
         number_of_items: 0,
         description_of_item:" ",
@@ -23,9 +22,7 @@ export default function ProductEditForm() {
     useEffect(() => {
         axios.get(`${API}/products/${id}`)
         .then(
-            response => {
-                setProduct(response.data.payload);
-            }
+            response => {setProduct(response.data.payload); console.log(response.data.payload)}
         ,
             (error) => {
             console.error(`Error: ${error}`)
@@ -58,12 +55,6 @@ export default function ProductEditForm() {
         setProduct({...product, [event.target.id] : event.target.value});
     }
     
-
-    //File Select Handler
-    const fileSelectHandler = (event) => {
-        product[event.target.id] = event.target.files[0]; 
-        product['image_url'] = URL.createObjectURL(product[event.target.id])
-    }
     
     
     
@@ -88,12 +79,15 @@ export default function ProductEditForm() {
                     required
                 />
                 <br />
-                <label htmlFor="file">Image URL:</label>
+                <label htmlFor="image_url">Image URL:</label>
                 <input
-                    id="file"
-                    name="file"
-                    type="file"
-                    onChange={fileSelectHandler}
+                    id="image_url"
+                    name="image_url"
+                    type="text"
+                    placeholder="http[s]://"
+                    value={product.image_url}
+                    onChange={handleTextChange}
+                    pattern="http[s]*://.+"
                     required
                 />
                 <br />
