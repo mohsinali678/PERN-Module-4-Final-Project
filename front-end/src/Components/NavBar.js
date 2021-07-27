@@ -12,6 +12,9 @@ export default function NavBar() {
       <button>
         <Link to="/products/new">Add New Product</Link>
       </button>
+      <Link to="/cart">
+        <button>Go To Cart</button>
+      </Link>
     </nav>
   );
 }
