@@ -13,7 +13,7 @@ CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   name TEXT,
   image_url TEXT,
-  file file,
+  file BYTEA,
   price NUMERIC,
   number_of_items INT,
   description_of_item TEXT,
